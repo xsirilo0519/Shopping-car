@@ -21,7 +21,7 @@ class Container extends Component {
                 <div class="ui grid">
                     <h1 className="mycart-header">My cart</h1>
                     <div class="left floated five wide column my-cart">
-                        <MyCart />
+                        <MyCart inCart_phones={inCart_phones} />
                     </div>
                     <div class="right floated five wide column">
                         <DndProvider backend={HTML5Backend} >
@@ -46,10 +46,12 @@ class Container extends Component {
 function mapStateToProps({ phones }) {
     const inCart_phones = Object.keys(phones).filter((phone) => phones[phone].inCart === 'true')
     const outCart_phones = Object.keys(phones).filter((phone) => !inCart_phones.includes(phone))
+    
 
     return {
         inCart_phones,
         outCart_phones,
+        
     }
 }
 
