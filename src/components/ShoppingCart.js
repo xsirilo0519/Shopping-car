@@ -29,7 +29,6 @@ class ShoppingCart extends Component {
         if (isActive) {
             backgroundColor = '#F7F7BD';
         } else if (canDrop) {
-             console.log("holaaaaa");
             backgroundColor = '#F7F7F7';
         }
         const style = {

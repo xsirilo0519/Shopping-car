@@ -1,18 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { removeIncart } from '../actions/phones';
 
 
 class MyCart extends Component {
     render() {
-        const {phones, inCart_phones } = this.props
+        const {phones, inCart_phones,dispatch } = this.props
 
+      const hola=(phone,phoneMain)=>{
+          console.log(phone,phoneMain);
+            dispatch(removeIncart(phone,phoneMain))
+        }
+  
 
         return (
             <div>
                 <div class="ui cards">
                      {inCart_phones
                     .map((phone) => (
-                        <div class="ui card centered">
+                        <div key={phone} class="ui card centered">
                                 <div class="content">
                                     <img
                                         src="/images/phone.jpg"
@@ -29,7 +35,7 @@ class MyCart extends Component {
                                     <div class="ui two buttons">
                     
                                         <button class="ui green basic button">Buy</button>
-                                        <button class="ui red basic button">Decline</button>
+                                        <button class="ui red basic button" onClick={()=>hola(phones[phone].brand,phone)} >Decline</button>
                                     </div>
                                 </div>
                             </div>
