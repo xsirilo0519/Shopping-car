@@ -22,8 +22,8 @@ export default function phones(state = {}, action) {
         case REMOVE_INCART:
             return {
                 ...state,
-                [action.idMain]: {
-                    ...state[action.id],
+                [action.main]: {
+                    ...state[action.main],
                     inCart: 'false'
                 }
             }

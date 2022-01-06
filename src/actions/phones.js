@@ -16,10 +16,9 @@ export function moveIncart(phone_id){
 }
 
     export function removeIncart(phone_id,phone_main){
-        console.log(phone_id,phone_main);
     return{
         type: REMOVE_INCART,
-        id: phone_main,
-        idMain:phone_main
+        id: phone_id,
+        main:phone_main,
     }
 }
